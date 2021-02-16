@@ -33,7 +33,7 @@ Quarkus.
 
 ## Results
 
-                    |Micronaut | Quarkus
+  -Xlog             |Micronaut | Quarkus
 --------------------|----------|--------
 class+load=info     |5284      | 3939
 class+preorder=debug|4844      | 3498
