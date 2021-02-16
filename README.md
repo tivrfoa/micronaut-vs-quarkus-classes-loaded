@@ -4,7 +4,15 @@ The goal is simply to create the most basic Micronaut and Quarkus
 "Hello World" application and compare the number of classes
 loaded by both after making one request and stopping the application.
 
-I'll use: `java -Xlog:class+load=info:classloaded.txt -jar target/filename.jar`
+I'll use:
+  - `java -Xlog:class+load=info:classloaded.txt -jar target/filename.jar`
+  - `java -Xlog:class+preorder=debug:preorder-debug.txt -jar target/demo-0.1.jar`
+
+`preorder` is interesting because it let us better understand how
+the framework works, as the doc says:
+>Enables tracing of all loaded classes in the order in which they’re referenced.
+
+https://docs.oracle.com/javase/9/tools/java.htm#JSWOR624
 
 ## What's the point?
 
@@ -25,9 +33,10 @@ Quarkus.
 
 ## Results
 
-Micronaut | Quarkus
-----------|--------
-5284      | 3939
+                    |Micronaut | Quarkus
+--------------------|----------|--------
+class+load=info     |5284      | 3939
+class+preorder=debug|4844      | 3498
 
 ### Micronaut 2.3.2
 
